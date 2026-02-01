@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Hashing Demo - CyberGuard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">🛡️ CyberGuard</div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/password">Password Checker</a>
+                <a href="/hash">Hash Demo</a>
+                <a href="/about">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-container">
+            <h2>🔗 Password Hashing (SHA-256)</h2>
+            <p style="text-align: center; color: #cbd5e1; margin-bottom: 2rem;">See how passwords are securely hashed using SHA-256 encryption</p>
+
+            <form method="POST">
+                <input type="password" name="password" placeholder="Enter your password" required>
+                <button type="submit" class="btn btn-primary">Generate Hash</button>
+            </form>
+
+            {% if hashed %}
+                <div style="margin-top: 2rem;">
+                    <h4 style="color: #0ea5e9; margin-bottom: 1rem;">🔐 SHA-256 Hash Output:</h4>
+                    <div class="hash-output">{{ hashed }}</div>
+                    <p style="color: #cbd5e1; font-size: 0.9rem; margin-top: 1rem; text-align: center;">
+                        <strong>Note:</strong> This hash is one-way encrypted. The original password cannot be recovered from this hash.
+                    </p>
+                </div>
+            {% endif %}
+
+            <div style="margin-top: 2rem; padding: 1.5rem; background: rgba(14, 165, 233, 0.1); border-radius: 6px; border-left: 3px solid #0ea5e9;">
+                <h4 style="color: #0ea5e9; margin-bottom: 1rem;">📖 About SHA-256:</h4>
+                <p style="color: #cbd5e1; line-height: 1.8;">
+                    SHA-256 (Secure Hash Algorithm 256-bit) is a cryptographic hash function that converts any input into a fixed 256-bit string of hexadecimal characters. 
+                    It's widely used for password storage and data integrity verification.
+                </p>
+                <ul style="color: #cbd5e1; text-align: left; margin-top: 1rem; line-height: 1.8;">
+                    <li>✓ One-way function (irreversible)</li>
+                    <li>✓ Deterministic (same input = same output)</li>
+                    <li>✓ Collision-resistant (hard to find two different inputs with same output)</li>
+                    <li>✓ Fast to compute</li>
+                </ul>
+            </div>
+
+            <a href="/" class="btn-back">← Back to Home</a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CyberGuard. Protecting digital security education.</p>
+    </footer>
+</body>
+</html>
