@@ -1,0 +1,1 @@
+A simple yet effective cybersecurity-focused web application that helps users analyze the strength of their passwords and securely hash them using industry-standard techniques. This project is built to demonstrate fundamental security concepts such as password validation, hashing, and safe handling of user input.
